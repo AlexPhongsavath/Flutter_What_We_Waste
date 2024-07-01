@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'home_page.dart';
 
 void main() {
-  runApp(WhatWeWasteApp());
+  runApp(const WhatWeWasteApp());
 }
 
 class WhatWeWasteApp extends StatelessWidget {
+  const WhatWeWasteApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -13,7 +15,7 @@ class WhatWeWasteApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.teal,
       ),
-      home: HomePage(),
+      home: const HomePage(),
     );
   }
 }

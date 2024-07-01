@@ -2,15 +2,17 @@ import 'package:flutter/material.dart';
 import 'garment_page.dart'; // Add this import
 
 class TypesOfProductsPage extends StatelessWidget {
+  const TypesOfProductsPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Types of Products'),
+        title: const Text('Types of Products'),
         centerTitle: true,
       ),
       body: ListView(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         children: [
           ProductCard(
             title: 'Garment',
@@ -22,19 +24,19 @@ class TypesOfProductsPage extends StatelessWidget {
               );
             },
           ),
-          ProductCard(
+          const ProductCard(
             title: 'Food & Beverage',
             image: Icons.restaurant,
           ),
-          ProductCard(
+          const ProductCard(
             title: 'Stationery',
             image: Icons.edit,
           ),
-          ProductCard(
+          const ProductCard(
             title: 'Electronic Appliance',
             image: Icons.flashlight_on,
           ),
-          ProductCard(
+          const ProductCard(
             title: 'Plastic',
             image: Icons.recycling,
           ),
@@ -49,17 +51,18 @@ class ProductCard extends StatelessWidget {
   final IconData image;
   final VoidCallback? onTap;
 
-  ProductCard({required this.title, required this.image, this.onTap});
+  const ProductCard(
+      {super.key, required this.title, required this.image, this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.symmetric(vertical: 8.0),
+      margin: const EdgeInsets.symmetric(vertical: 8.0),
       child: ListTile(
         leading: Icon(image, size: 50.0, color: Colors.teal),
         title: Text(
           title,
-          style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+          style: const TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
         ),
         onTap: onTap,
       ),

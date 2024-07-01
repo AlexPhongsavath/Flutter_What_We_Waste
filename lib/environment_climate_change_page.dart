@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
 class EnvironmentClimateChangePage extends StatelessWidget {
+  const EnvironmentClimateChangePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Environment & Climate Change'),
+        title: const Text('Environment & Climate Change'),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -14,21 +16,21 @@ class EnvironmentClimateChangePage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 'Data about Environment & Climate Change',
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Container(
                 decoration: BoxDecoration(
                   color: Colors.teal[50],
                   borderRadius: BorderRadius.circular(8),
                 ),
-                padding: EdgeInsets.all(16),
-                child: Column(
+                padding: const EdgeInsets.all(16),
+                child: const Column(
                   children: [
                     EnvironmentOption(
                       icon: Icons.article,
@@ -65,7 +67,7 @@ class EnvironmentOption extends StatelessWidget {
   final IconData icon;
   final String label;
 
-  EnvironmentOption({required this.icon, required this.label});
+  const EnvironmentOption({super.key, required this.icon, required this.label});
 
   @override
   Widget build(BuildContext context) {
@@ -74,11 +76,11 @@ class EnvironmentOption extends StatelessWidget {
       child: Row(
         children: [
           Icon(icon, color: Colors.teal),
-          SizedBox(width: 16),
+          const SizedBox(width: 16),
           Expanded(
             child: Text(
               label,
-              style: TextStyle(fontSize: 16),
+              style: const TextStyle(fontSize: 16),
             ),
           ),
         ],

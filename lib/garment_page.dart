@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'product_detail_page.dart'; // Add this import
 
 class GarmentPage extends StatelessWidget {
+  const GarmentPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('List of Products'),
+        title: const Text('List of Products'),
         centerTitle: true,
       ),
       body: Padding(
@@ -14,7 +16,7 @@ class GarmentPage extends StatelessWidget {
         child: Column(
           children: [
             DropdownButton<String>(
-              hint: Text('Sort by'),
+              hint: const Text('Sort by'),
               items: <String>['Price', 'Name', 'Category'].map((String value) {
                 return DropdownMenuItem<String>(
                   value: value,
@@ -29,7 +31,7 @@ class GarmentPage extends StatelessWidget {
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
                 children: [
-                  ProductCard(
+                  const ProductCard(
                     title: 'T-shirt',
                     image: 'assets/tshirt.png', // Update with your asset paths
                   ),
@@ -49,31 +51,37 @@ class GarmentPage extends StatelessWidget {
                               (total weight: 0.516 Kg)
                             ''',
                             packaging: '0.131Kg',
-                            carbonFootprint: [
-                              {'process': 'raw material preparing', 'footprint': '75%'},
+                            carbonFootprint: const [
+                              {
+                                'process': 'raw material preparing',
+                                'footprint': '75%'
+                              },
                               {'process': 'manufacturing', 'footprint': '10%'},
                               {'process': 'transportation', 'footprint': '3%'},
                               {'process': 'customer usage', 'footprint': '5%'},
-                              {'process': 'disposal / recycle', 'footprint': '7%'},
+                              {
+                                'process': 'disposal / recycle',
+                                'footprint': '7%'
+                              },
                             ],
                           ),
                         ),
                       );
                     },
                   ),
-                  ProductCard(
+                  const ProductCard(
                     title: 'Skirt',
                     image: 'assets/skirt.png',
                   ),
-                  ProductCard(
+                  const ProductCard(
                     title: 'Handbag',
                     image: 'assets/handbag.png',
                   ),
-                  ProductCard(
+                  const ProductCard(
                     title: 'Shoes',
                     image: 'assets/shoes.png',
                   ),
-                  ProductCard(
+                  const ProductCard(
                     title: 'Hat',
                     image: 'assets/hat.png',
                   ),
@@ -92,7 +100,8 @@ class ProductCard extends StatelessWidget {
   final String image;
   final VoidCallback? onTap;
 
-  ProductCard({required this.title, required this.image, this.onTap});
+  const ProductCard(
+      {super.key, required this.title, required this.image, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -111,7 +120,8 @@ class ProductCard extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 title,
-                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+                style: const TextStyle(
+                    fontSize: 16.0, fontWeight: FontWeight.bold),
               ),
             ),
           ],
