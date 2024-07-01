@@ -1,5 +1,9 @@
+import 'package:final_project/type_of_product/electronic_appliance.dart';
+import 'package:final_project/type_of_product/food_beverage.dart';
+import 'package:final_project/type_of_product/plastic.dart';
+import 'package:final_project/type_of_product/stationery.dart';
 import 'package:flutter/material.dart';
-import 'garment_page.dart'; // Add this import
+import 'type_of_product/garment_page.dart'; // Add this import
 
 class TypesOfProductsPage extends StatelessWidget {
   @override
@@ -25,18 +29,42 @@ class TypesOfProductsPage extends StatelessWidget {
           ProductCard(
             title: 'Food & Beverage',
             image: Icons.restaurant,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => FoodPage()),
+              );
+            },
           ),
           ProductCard(
             title: 'Stationery',
             image: Icons.edit,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => StationeryPage()),
+              );
+            },
           ),
           ProductCard(
             title: 'Electronic Appliance',
             image: Icons.flashlight_on,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ElectronicPage()),
+              );
+            },
           ),
           ProductCard(
             title: 'Plastic',
             image: Icons.recycling,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PlasticPage()),
+              );
+            },
           ),
         ],
       ),
