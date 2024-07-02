@@ -1,3 +1,4 @@
+import 'package:final_project/const/const.dart';
 import 'package:flutter/material.dart';
 import '../product_detail_page.dart'; // Add this import
 
@@ -5,24 +6,34 @@ class ElectronicPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ConstantColor.backgroundColor,
       appBar: AppBar(
-        title: Text('List of Products'),
+        backgroundColor: ConstantColor.backgroundColor,
+        title: Image.asset('images/logo.png'),
         centerTitle: true,
+        actions: [
+          IconButton(
+            icon: const Icon(
+              Icons.search,
+            ),
+            onPressed: () {},
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            DropdownButton<String>(
-              hint: Text('Sort by'),
-              items: <String>['Price', 'Name', 'Category'].map((String value) {
-                return DropdownMenuItem<String>(
-                  value: value,
-                  child: Text(value),
-                );
-              }).toList(),
-              onChanged: (_) {},
+            const Center(
+            child: Text(
+              'Electronic Appliance',
+              style: TextStyle(
+                fontSize: 30,
+                color: ConstantColor.colorMain,
+              ),
             ),
+          ),
+
             Expanded(
               child: GridView.count(
                 crossAxisCount: 2,
@@ -30,21 +41,22 @@ class ElectronicPage extends StatelessWidget {
                 mainAxisSpacing: 10,
                 children: [
                   ProductCard(
-                    title: 'T-shirt',
-                    image: 'assets/tshirt.png', // Update with your asset paths
+                    title: 'Rice Cooker',
+                    image: 'images/Rice.png', // Update with your asset paths
                     onTap: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) => ProductDetailPage(
-                            productName: 'T-shirt',
-                            productImage: 'assets/tshirt.png',
+                            productName: 'Rice',
+                            productImage: 'images/Rice.png',
                             composition: '''
                               polymer 70%
                               wool 30%
                               (total weight: 0.516 Kg)
                             ''',
                             packaging: '0.131Kg',
+                            totalCarbon: '15.2Kg',
                             carbonFootprint: [
                               {'process': 'raw material preparing', 'footprint': '75%'},
                               {'process': 'manufacturing', 'footprint': '10%'},
@@ -58,21 +70,22 @@ class ElectronicPage extends StatelessWidget {
                     },
                   ),
                   ProductCard(
-                    title: 'Pants',
-                    image: 'assets/pants.png',
+                    title: 'Air conditioner',
+                    image: 'images/Air.png',
                     onTap: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) => ProductDetailPage(
-                            productName: 'Pants',
-                            productImage: 'assets/pants.png',
+                            productName: 'Air',
+                            productImage: 'images/Air.png',
                             composition: '''
                               polymer 70%
                               wool 30%
                               (total weight: 0.516 Kg)
                             ''',
                             packaging: '0.131Kg',
+                            totalCarbon: '15.2Kg',
                             carbonFootprint: [
                               {'process': 'raw material preparing', 'footprint': '75%'},
                               {'process': 'manufacturing', 'footprint': '10%'},
@@ -86,21 +99,22 @@ class ElectronicPage extends StatelessWidget {
                     },
                   ),
                   ProductCard(
-                    title: 'Skirt',
-                    image: 'assets/skirt.png',
+                    title: 'Fan',
+                    image: 'images/Fan.png',
                     onTap: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) => ProductDetailPage(
-                            productName: 'Skirt',
-                            productImage: 'assets/skirt.png',
+                            productName: 'Fan',
+                            productImage: 'images/Fan.png',
                             composition: '''
                               polymer 70%
                               wool 30%
                               (total weight: 0.516 Kg)
                             ''',
                             packaging: '0.131Kg',
+                            totalCarbon: '15.2Kg',
                             carbonFootprint: [
                               {'process': 'raw material preparing', 'footprint': '75%'},
                               {'process': 'manufacturing', 'footprint': '10%'},
@@ -114,21 +128,22 @@ class ElectronicPage extends StatelessWidget {
                     },
                   ),
                   ProductCard(
-                    title: 'Handbag',
-                    image: 'assets/handbag.png',
+                    title: 'Iron',
+                    image: 'images/Iron.png',
                     onTap: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) => ProductDetailPage(
-                            productName: 'Handbag',
-                            productImage: 'assets/handbag.png',
+                            productName: 'Iron',
+                            productImage: 'images/Iron.png',
                             composition: '''
                               polymer 70%
                               wool 30%
                               (total weight: 0.516 Kg)
                             ''',
                             packaging: '0.131Kg',
+                            totalCarbon: '15.2Kg',
                             carbonFootprint: [
                               {'process': 'raw material preparing', 'footprint': '75%'},
                               {'process': 'manufacturing', 'footprint': '10%'},
@@ -142,21 +157,22 @@ class ElectronicPage extends StatelessWidget {
                     },
                   ),
                   ProductCard(
-                    title: 'Shoes',
-                    image: 'assets/shoes.png',
+                    title: 'Microwave',
+                    image: 'images/Microwave.png',
                     onTap: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) => ProductDetailPage(
-                            productName: 'Shoes',
-                            productImage: 'assets/shoes.png',
+                            productName: 'Microwave',
+                            productImage: 'images/Microwave.png',
                             composition: '''
                               polymer 70%
                               wool 30%
                               (total weight: 0.516 Kg)
                             ''',
                             packaging: '0.131Kg',
+                            totalCarbon: '15.2Kg',
                             carbonFootprint: [
                               {'process': 'raw material preparing', 'footprint': '75%'},
                               {'process': 'manufacturing', 'footprint': '10%'},
@@ -170,21 +186,22 @@ class ElectronicPage extends StatelessWidget {
                     },
                   ),
                   ProductCard(
-                    title: 'Hat',
-                    image: 'assets/hat.png',
+                    title: 'Television',
+                    image: 'images/Television.png',
                     onTap: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) => ProductDetailPage(
-                            productName: 'Hat',
-                            productImage: 'assets/hat.png',
+                            productName: 'Television',
+                            productImage: 'images/Television.png',
                             composition: '''
                               polymer 70%
                               wool 30%
                               (total weight: 0.516 Kg)
                             ''',
                             packaging: '0.131Kg',
+                            totalCarbon: '15.2Kg',
                             carbonFootprint: [
                               {'process': 'raw material preparing', 'footprint': '75%'},
                               {'process': 'manufacturing', 'footprint': '10%'},
@@ -212,11 +229,12 @@ class ProductCard extends StatelessWidget {
   final String image;
   final VoidCallback? onTap;
 
-  ProductCard({required this.title, required this.image, this.onTap});
+  ProductCard({required this.title, required this.image, this.onTap,});
 
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: ConstantColor.colorMain,
       child: InkWell(
         onTap: onTap,
         child: Column(
@@ -231,7 +249,7 @@ class ProductCard extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 title,
-                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.white),
               ),
             ),
           ],
