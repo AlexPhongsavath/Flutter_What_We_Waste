@@ -1,7 +1,6 @@
 import 'package:final_project/const/const.dart';
 import 'package:flutter/material.dart';
 import 'types_of_products.dart'; // Add this import
-// import 'information_environment/environment_climate_change_page.dart'; // Add this import
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
